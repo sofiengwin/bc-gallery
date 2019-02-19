@@ -1,28 +1,22 @@
 import * as React from 'react';
 import {Switch, Route} from 'react-router-dom';
 
-import Assetthumbnail from './AssetThumbnail';
 import AssetView from './AssetView';
-import Upload from '../../Upload';
+import AssetsList from './AssetsList';
+import Upload from '../../Upload/';
+import Layout from './Layout';
 
 class Dashboard extends React.Component {
   render() {
     return (
-      <div style={{maxWidth: 1200, minHeight: '100vh', background: '#ECECEC', margin: 'auto' }}>
-        <h1>Hello Dashboar</h1>
-        <Upload />
+        <>
         <Switch>
-          <Route exact path='/dashboard' render={() => {
-            return <div style={{display: 'flex', flexWrap: 'wrap'}}>
-              {Array(20).fill(0).map((_, index) => {
-                return <Assetthumbnail key={index}/>
-              })}
-            </div>
-          }}/>
+          <Route exact path='/dashboard' render={() => (<Layout><AssetsList /></Layout>)}/>
+          <Route path='/dashboard/assets/:assetId' component={() => (<Layout><AssetView /></Layout>)} />
 
-          <Route path='/dashboard/assets/:assertId' component={AssetView} />
+          <Route exact path='/dashboard/upload' component={Upload}/>
         </Switch>
-      </div>
+      </>
     );
   }
 }

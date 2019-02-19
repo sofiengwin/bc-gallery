@@ -5,6 +5,7 @@ const SimplePage = styled.div`
   align-items: center;
   justify-content: center;
   height: 100vh;
+  background: #2d343d;
 `;
 
 export default SimplePage;

@@ -4,7 +4,6 @@ import { Switch, Route } from 'react-router-dom';
 import RenderError from '../RenderError';
 import LoginRoute from '../Login';
 import SignupRoute from '../Signup';
-import Homepage from '../Homepage';
 
 const Public: React.SFC = () => {
   return (
@@ -12,7 +11,7 @@ const Public: React.SFC = () => {
       <Route exact path='/error' component={RenderError} />
       <Route exact path='/login' component={LoginRoute} />
       <Route exact path='/signup' component={SignupRoute} />
-      <Route path='/' component={Homepage} />
+      <Route exact path='/' component={LoginRoute} />
     </Switch>
   );
 }

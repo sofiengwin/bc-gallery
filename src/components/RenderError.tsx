@@ -2,7 +2,7 @@ import * as React from 'react';
 
 const RenderError: React.SFC = () => {
   return (
-    <h1>Hello RenderError</h1>
+    <h1>Something bad happened</h1>
   );
 }
 
