@@ -70,7 +70,7 @@ class AssetsList extends React.Component<Props, State> {
         {this.state.loading ? (<CenterSpinner />) : (
           <div>
             <ErrorText style={{display: 'flex', justifyContent: 'center', padding: '20px 0'}}>{this.state.serverError}</ErrorText>
-            {!!assets.length && <Link to='/dashboard/upload'>Uploa More</Link>}
+            {!!assets.length && <Link to='/dashboard/upload'>Upload More</Link>}
             <div style={{display: 'flex', flexWrap: 'wrap'}}>
               {assets.map((asset: any, index: number) => {
                 return <Assetthumbnail key={index} asset={asset}/>
